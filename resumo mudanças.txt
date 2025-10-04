@@ -1,0 +1,39 @@
+
+1.sons:
+(game over)
+js
+
+foi adicionado a variaveil:
+const gameOverSound = new Audio('game_over.mp3');
+
+foi adicionado no window.onload:
+ player = document.getElementById('player');
+
+foi adicionado na função game over:
+// ✅ 1. Toca o som de Game Over
+    gameOverSound.pause();
+    gameOverSound.currentTime = 0;
+    gameOverSound.volume = 1.0;
+    gameOverSound.play();
+
+foi adicinado na function setupControls:
+
+if (!gameOverSound._unlocked) {
+            gameOverSound.play().then(() => {
+                gameOverSound.pause();
+                gameOverSound.currentTime = 0;
+                gameOverSound._unlocked = true; // marca como desbloqueado
+                console.log("🔊 Som desbloqueado!");
+            }).catch(err => console.log("Erro ao desbloquear som:", err));
+        }
+
+
+(colisao co meteoro)
+
+declarar variavel
+const meteoroSound = new Audio('meteoro.mp3');
+
+adicionar no começo da function handleMeteoroCollision
+ meteoroSound.pause();
+    meteoroSound.currentTime = 0;
+    meteoroSound.play();
